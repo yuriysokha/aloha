@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AlohaService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="DefaultEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://18.191.244.111/AlohaService/AlohaService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://18.191.244.111/AlohaService/AlohaService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://18.191.244.111/AlohaService/AlohaService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AlohaService" />
+      <xsd:import schemaLocation="https://18.191.244.111/AlohaService/AlohaService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/AlohaService.ServiceDataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAlohaService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_CreateAirCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAirCompany" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_CreateAirCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAirCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_GetAirCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAirCompany" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_GetAirCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAirCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_UpdateAirCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAirCompany" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_UpdateAirCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAirCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_DeleteAirCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAirCompany" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_DeleteAirCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAirCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_GetAirCompanyList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAirCompanyList" />
+  </wsdl:message>
+  <wsdl:message name="IAlohaService_GetAirCompanyList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAirCompanyListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAlohaService">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAlohaService/GetData" message="tns:IAlohaService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAlohaService/GetDataResponse" message="tns:IAlohaService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAlohaService/GetDataUsingDataContract" message="tns:IAlohaService_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAlohaService/GetDataUsingDataContractResponse" message="tns:IAlohaService_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAlohaService/CreateUser" message="tns:IAlohaService_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAlohaService/CreateUserResponse" message="tns:IAlohaService_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAlohaService/GetUser" message="tns:IAlohaService_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAlohaService/GetUserResponse" message="tns:IAlohaService_GetUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAlohaService/UpdateUser" message="tns:IAlohaService_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAlohaService/UpdateUserResponse" message="tns:IAlohaService_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAlohaService/DeleteUser" message="tns:IAlohaService_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAlohaService/DeleteUserResponse" message="tns:IAlohaService_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAirCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAlohaService/CreateAirCompany" message="tns:IAlohaService_CreateAirCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAlohaService/CreateAirCompanyResponse" message="tns:IAlohaService_CreateAirCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAlohaService/GetAirCompany" message="tns:IAlohaService_GetAirCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAlohaService/GetAirCompanyResponse" message="tns:IAlohaService_GetAirCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAirCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAlohaService/UpdateAirCompany" message="tns:IAlohaService_UpdateAirCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAlohaService/UpdateAirCompanyResponse" message="tns:IAlohaService_UpdateAirCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAirCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAlohaService/DeleteAirCompany" message="tns:IAlohaService_DeleteAirCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAlohaService/DeleteAirCompanyResponse" message="tns:IAlohaService_DeleteAirCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirCompanyList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAlohaService/GetAirCompanyList" message="tns:IAlohaService_GetAirCompanyList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAlohaService/GetAirCompanyListResponse" message="tns:IAlohaService_GetAirCompanyList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DefaultEndpoint" type="tns:IAlohaService">
+    <wsp:PolicyReference URI="#DefaultEndpoint_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IAlohaService/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IAlohaService/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <soap:operation soapAction="http://tempuri.org/IAlohaService/CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/IAlohaService/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IAlohaService/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IAlohaService/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAirCompany">
+      <soap:operation soapAction="http://tempuri.org/IAlohaService/CreateAirCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirCompany">
+      <soap:operation soapAction="http://tempuri.org/IAlohaService/GetAirCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAirCompany">
+      <soap:operation soapAction="http://tempuri.org/IAlohaService/UpdateAirCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAirCompany">
+      <soap:operation soapAction="http://tempuri.org/IAlohaService/DeleteAirCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirCompanyList">
+      <soap:operation soapAction="http://tempuri.org/IAlohaService/GetAirCompanyList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AlohaService">
+    <wsdl:port name="DefaultEndpoint" binding="tns:DefaultEndpoint">
+      <soap:address location="https://18.191.244.111/AlohaService/AlohaService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

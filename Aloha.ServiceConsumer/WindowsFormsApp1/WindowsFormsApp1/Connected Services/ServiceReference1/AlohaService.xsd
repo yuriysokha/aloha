@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AlohaService.ServiceDataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AlohaService.ServiceDataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="UserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PasswordSalt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistrationStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SequrityAnswer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SequrityQuestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserRole" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserInfo" nillable="true" type="tns:UserInfo" />
+  <xs:complexType name="OperationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedObjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationResult" nillable="true" type="tns:OperationResult" />
+  <xs:complexType name="OperationResultValueOfUserdi1iiSGT">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResultValueOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AlohaService.ServiceDataContracts" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="User" Namespace="http://schemas.datacontract.org/2004/07/AlohaService.ServiceDataContracts" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationResultValueOfUserdi1iiSGT" nillable="true" type="tns:OperationResultValueOfUserdi1iiSGT" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PasswordSalt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistrationStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SequrityAnswer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SequrityQuestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserRole" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="AirCompanyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultPaymentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiscountType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AirCompanyInfo" nillable="true" type="tns:AirCompanyInfo" />
+  <xs:complexType name="OperationResultValueOfAirCompanydi1iiSGT">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResultValueOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AlohaService.ServiceDataContracts" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AirCompany" Namespace="http://schemas.datacontract.org/2004/07/AlohaService.ServiceDataContracts" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="tns:AirCompany" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationResultValueOfAirCompanydi1iiSGT" nillable="true" type="tns:OperationResultValueOfAirCompanydi1iiSGT" />
+  <xs:complexType name="AirCompany">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultPaymentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiscountType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AirCompany" nillable="true" type="tns:AirCompany" />
+  <xs:complexType name="OperationResultValueOfArrayOfAirCompanydi1iiSGT">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResultValueOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AlohaService.ServiceDataContracts" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfAirCompany" Namespace="http://schemas.datacontract.org/2004/07/AlohaService.ServiceDataContracts" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="tns:ArrayOfAirCompany" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationResultValueOfArrayOfAirCompanydi1iiSGT" nillable="true" type="tns:OperationResultValueOfArrayOfAirCompanydi1iiSGT" />
+  <xs:complexType name="ArrayOfAirCompany">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AirCompany" nillable="true" type="tns:AirCompany" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAirCompany" nillable="true" type="tns:ArrayOfAirCompany" />
+</xs:schema>

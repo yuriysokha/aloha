@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ec46cd2e-4c52-4925-806e-8f9fe352102c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://18.191.244.111/AlohaService/AlohaService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AlohaService.disco" MetadataType="Disco" ID="cab7d215-a7d6-4918-96e4-42b88176e1e4" SourceId="1" SourceUrl="https://18.191.244.111/AlohaService/AlohaService.svc?disco" />
+    <MetadataFile FileName="AlohaService.xsd" MetadataType="Schema" ID="89e7b301-9241-4011-a235-53a7699aa8b1" SourceId="1" SourceUrl="https://18.191.244.111/AlohaService/AlohaService.svc?xsd=xsd3" />
+    <MetadataFile FileName="AlohaService1.xsd" MetadataType="Schema" ID="b54697ce-8d6c-49a5-a427-3409a6050474" SourceId="1" SourceUrl="https://18.191.244.111/AlohaService/AlohaService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AlohaService2.xsd" MetadataType="Schema" ID="35e85abe-3dc2-4af5-afb3-74f7caad3539" SourceId="1" SourceUrl="https://18.191.244.111/AlohaService/AlohaService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AlohaService3.xsd" MetadataType="Schema" ID="dbcb57a8-e901-400d-ba14-5559439815c1" SourceId="1" SourceUrl="https://18.191.244.111/AlohaService/AlohaService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AlohaService.wsdl" MetadataType="Wsdl" ID="c4c8be44-6b25-407d-9450-33a8547f8562" SourceId="1" SourceUrl="https://18.191.244.111/AlohaService/AlohaService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
